@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raffle</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2>Aleatory selection</h2>
+  <div class="mb-3">
+    <input type="text" id="participantInput" class="form-control">
+    <button id="addParticipantBtn" class="btn btn-primary mt-2">Add Participant</button>
+  </div>
+  <button id="startRaffleBtn" class="btn btn-success mb-3" disabled>Start Raffle</button>
+  <p id="noParticipantsMsg" class="text-danger d-none">No participants available.</p>
+  <div class="d-flex gap-5">
+    <div>
+      <h3>All Participants:</h3>
+      <ul id="participantsList" class="list-group">
+      </ul>
+    </div>
+    <div>
+      <h3>Ranking Order:</h3>
+      <ul id="finalParticipantsList" class="list-group">
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/script.js"></script>
+
+
+</body>
+</html>
