@@ -1,7 +1,75 @@
-body {
-    background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+/* Global styles */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  font-family: 'Arial', sans-serif;
 }
-#participantInput{
-max-width: 30vw;
+
+/* Ensure form control looks good on mobile */
+.form-control {
+  max-width: 100%;
+  min-width: 50%;
+  margin: 0 auto;
+}
+
+/* Make buttons look professional */
+button {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #333;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Animate participants list items */
+.list-group-item {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+  background-color: #f1f1f1;
+  transform: scale(1.02);
+}
+
+/* Card styling */
+.card {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Media queries for responsive layout */
+@media (max-width: 768px) {
+  .row {
+      flex-direction: column;
+  }
+
+  .col-md-6 {
+      margin-bottom: 20px;
+  }
+
+  .form-control {
+      max-width: 100%;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.animate__fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Professional touch for text */
+h2, h4 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
 }
