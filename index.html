@@ -1,39 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Raffle</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raffle Selection</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<div class="container mt-5">
-  <h2>Aleatory selection</h2>
-  <div class="mb-3">
-    <input type="text" id="participantInput" class="form-control">
-    <button id="addParticipantBtn" class="btn btn-primary mt-2">Add Participant</button>
-  </div>
-  <button id="startRaffleBtn" class="btn btn-success mb-3" disabled>Start Raffle</button>
-  <p id="noParticipantsMsg" class="text-danger d-none">No participants available.</p>
-  <div class="d-flex gap-5">
-    <div>
-      <h3>All Participants:</h3>
-      <ul id="participantsList" class="list-group">
-      </ul>
+  <body>
+    <div class="container mt-5">
+      <div
+        class="card shadow-lg p-4 rounded bg-light animate__animated animate__fadeIn"
+      >
+        <h2 class="text-center mb-4">Aleatory Selection</h2>
+
+        <div class="mb-3">
+          <label for="participantInput" class="form-label"
+            >Enter Participant Name</label
+          >
+          <input
+            type="text"
+            id="participantInput"
+            class="form-control"
+            placeholder="Type name here..."
+          />
+          <button id="addParticipantBtn" class="btn btn-primary mt-3">
+            Add Participant
+          </button>
+        </div>
+
+        <div class="mb-3">
+          <label for="multipleParticipantsInput" class="form-label"
+            >Add Multiple Participants (Comma Separated)</label
+          >
+          <textarea
+            id="multipleParticipantsInput"
+            class="form-control"
+            placeholder="Enter names separated by commas"
+          ></textarea>
+          <button id="addMultipleParticipantsBtn" class="btn btn-primary mt-3">
+            Add Multiple Participants
+          </button>
+        </div>
+
+        <div class="text-center">
+          <button id="startRaffleBtn" class="btn btn-success mt-2" disabled>
+            Start Raffle
+          </button>
+          <button id="startAllRaffleBtn" class="btn btn-info mt-2">
+            Start Full Raffle
+          </button>
+          <button id="clearRankingBtn" class="btn btn-warning mt-2">
+            Clear Ranking
+          </button>
+        </div>
+        <div class="text-center mt-4 d-none" id="exportButtons">
+          <button id="exportPDF" class="btn btn-secondary">
+            Export as PDF
+          </button>
+        </div>
+
+        <p id="noParticipantsMsg" class="text-danger mt-3 d-none text-center">
+          No participants available.
+        </p>
+
+        <div class="row mt-5">
+          <div class="col-md-6">
+            <h4>All Participants</h4>
+            <ul id="participantsList" class="list-group"></ul>
+          </div>
+          <div class="col-md-6">
+            <h4>Ranking Order</h4>
+            <ul id="finalParticipantsList" class="list-group"></ul>
+          </div>
+        </div>
+      </div>
     </div>
-    <div>
-      <h3>Ranking Order:</h3>
-      <ul id="finalParticipantsList" class="list-group">
-      </ul>
-    </div>
-  </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/script.js"></script>
-
-
-</body>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
